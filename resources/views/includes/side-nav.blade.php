@@ -13,7 +13,7 @@
                 Categories
             </a>
 
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{!! route('admin.items.index') !!}">
                 <div class="sb-nav-link-icon"><i class="fas fa-gem"></i></div>
                 Items
             </a>

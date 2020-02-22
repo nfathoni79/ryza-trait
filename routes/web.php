@@ -21,4 +21,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::middleware('auth')->group(function () {
     Route::resource('/admin/categories', 'CategoryController', ['as' => 'admin']);
+    Route::resource('/admin/items', 'ItemController', ['as' => 'admin']);
 });

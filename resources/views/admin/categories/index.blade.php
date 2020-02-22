@@ -17,6 +17,12 @@
             </div>
         @endif
 
+        @if (session('statusError'))
+            <div class="alert alert-danger">
+                {{ session('statusError') }}
+            </div>
+        @endif
+
         <div class="mb-3">
             <a href="{!! route('admin.categories.create') !!}" class="btn btn-success">Create Category</a>
         </div>

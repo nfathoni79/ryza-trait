@@ -18,7 +18,7 @@ class CategoryController extends Controller
         //
         $categories = Category::all();
 
-        return view('categories.index', compact('categories'));
+        return view('admin.categories.index', compact('categories'));
     }
 
     /**
@@ -29,7 +29,7 @@ class CategoryController extends Controller
     public function create()
     {
         //
-        return view('categories.create');
+        return view('admin.categories.create');
     }
 
     /**
@@ -77,7 +77,7 @@ class CategoryController extends Controller
     public function edit(Category $category)
     {
         //
-        return view('categories.edit', compact('category'));
+        return view('admin.categories.edit', compact('category'));
     }
 
     /**
@@ -109,8 +109,23 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         //
-        $material = $category->material;
-        $material->delete();
+        if ($category->items->count() > 0)
+        {
+            return redirect()->route('admin.categories.index')
+                ->with('statusError', 'Cannot delete category, there are items associated with this category');
+        }
+
+        if ($category->material)
+        {
+            if ($category->material->items->count() > 0)
+            {
+                return redirect()->route('admin.categories.index')
+                    ->with('statusError', 'Cannot delete category, this category is used as material of items');
+            }
+
+            $category->material->delete();
+        }
+
         $category->delete();
 
         return redirect()->route('admin.categories.index')->with('status', 'Category deleted');
