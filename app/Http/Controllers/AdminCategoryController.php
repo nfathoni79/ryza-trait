@@ -6,7 +6,7 @@ use App\Category;
 use App\Material;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class AdminCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -54,7 +54,8 @@ class CategoryController extends Controller
         $material->materialable_type = 'App\Category';
         $material->save();
 
-        return redirect()->route('admin.categories.index')->with('status', 'Category created');
+        return redirect()->route('admin.categories.index')
+            ->with('status', 'Created category "' . $category->name . '"');
     }
 
     /**
@@ -97,7 +98,8 @@ class CategoryController extends Controller
         $category->name = $request->name;
         $category->save();
 
-        return redirect()->route('admin.categories.index')->with('status', 'Category updated');
+        return redirect()->route('admin.categories.index')
+            ->with('status', 'Updated category "' . $category->name . '"');
     }
 
     /**

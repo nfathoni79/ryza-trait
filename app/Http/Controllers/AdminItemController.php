@@ -7,7 +7,7 @@ use App\Material;
 use App\Category;
 use Illuminate\Http\Request;
 
-class ItemController extends Controller
+class AdminItemController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -55,7 +55,8 @@ class ItemController extends Controller
         $material->materialable_type = 'App\Item';
         $material->save();
 
-        return redirect()->route('admin.items.index')->with('status', 'Item created');
+        return redirect()->route('admin.items.index')
+            ->with('status', 'Created item "' . $item->name . '"');
     }
 
     /**
@@ -127,7 +128,8 @@ class ItemController extends Controller
             $item->materials()->sync([]);
         }
 
-        return redirect()->route('admin.items.index')->with('status', 'Item updated');
+        return redirect()->route('admin.items.index')
+            ->with('status', 'Updated item "' . $item->name . '"');
     }
 
     /**
