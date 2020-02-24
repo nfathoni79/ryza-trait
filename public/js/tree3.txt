@@ -1,0 +1,574 @@
+Item Memory
+    Mist Liquid
+    Ratsel Luft -- L
+    Vanish Siegel -- L
+    Astronomical Clock
+    Grude Globe
+    Heroic Geist
+    Feather Draft
+    Luft
+    Lightning Bell
+    Lightning Sand
+    Strahl Plajig
+
+Material Memory
+    * Mist Liquid
+    * Ratsel Luft
+    * (Bomb) -- X
+    * Vanish Siegel -- X
+    * (Magic Tool) -- L
+    * Astronomical Clock -- X
+    * Grudge Globe -- X
+    * Heroic Geist -- X
+    * Feather Draft
+    * (Gas)
+    * Luft
+    * Lightning Bell
+    * Lightning Sand
+    * Strahl Plajig -- X
+
+
+
+Mist Liquid
+    * Mist Liquid
+        Ratsel Luft
+            * Ratsel Luft
+                Vanish Siegel
+                    * Vanish Siegel
+                        X
+                    * (Magic Tool)
+                        Astronomical Clock
+                            * Astronomical Clock
+                                X
+                            * (Magic Tool)
+                                L
+                        Grude Globe
+                            * Grudge Globe
+                                X
+                            * (Magic Tool)
+                                L
+            * (Bomb)
+                X
+        Heroic Geist
+            * Heroic Geist
+                X
+            * (Magic Tool)
+                L
+        Feather Draft
+            * Feather Draft
+                Vanish Siegel
+                    L
+            * (Gas)
+                Luft
+                    * Luft
+                        Ratsel Luft
+                            L
+                    * (Bomb)
+                        X
+                Lightning Bell
+                    * Lightning Bell
+                        Lightning Sand
+                            * Lightning Sand
+                                Strahl Plajig
+                                    * Strahl Plajig
+                                        X
+                                    * (Bomb)
+                                        X
+                            * (Sand)
+                                Plajig
+                                    * Plajig
+                                        Lightning Bell
+                                            L
+                                        Strahl Plajig
+                                            L
+                                    * (Bomb)
+                                        X
+                                Strahl Plajig
+                                    L
+                                Yellow Supplement
+                                    * Yellow Supplement
+                                        X
+                                    * (Ore)
+                                        Giant Beetle
+                                            * Giant Beetle
+                                                X
+                                            * (Bug)
+                                                Luft
+                                                    L
+                                                War Powder
+                                                    * War Powder
+                                                        X
+                                                    * (Medicine)
+                                                        Goddess Cup
+                                                            * Goddess Cup
+                                                                X
+                                                            * (Medicine)
+                                                                L
+                                                Miracle Ebonyal
+                                                    * Miracle Ebonyal
+                                                        Bloodlust Tablet
+                                                            * Bloodlust Tablet
+                                                                X
+                                                            * (Medicine)
+                                                                L
+                                                    * (Medicine)
+                                                        L
+                                                ...
+                                        Ice Caltrop
+                                            * Ice Caltrop
+                                                X
+                                            * (Bomb)
+                                                X
+                                        Plajig
+                                            L
+                                        ...
+                                    * (Thread)
+                                        Cloth
+                                            * Cloth
+                                                Kurken Sweats
+                                                    * Kurken Sweats
+                                                        X
+                                                    * (Armor)
+                                                        X
+                                                Noble Tunic
+                                                    * Noble Tunic
+                                                        X
+                                                    * (Armor)
+                                                        X
+                                                Leather Protector
+                                                    * Leather Protector
+                                                        X
+                                                    * (Armor)
+                                                        X
+                                            * (Cloth)
+                                                Kurken Sweats
+                                                    L
+                                                Noble Tunic
+                                                    L
+                                                Leather Protector
+                                                    L
+                                                ...
+                                        Beastial Air
+                                            * Beastial Air
+                                                Knapsack
+                                                    * Knapsack
+                                                        Exploration Set
+                                                            * Exploration Set
+                                                                X
+                                                            * (Gathering)
+                                                                X
+                                                    * (Gathering)
+                                                        X
+                                                Radiant Plate
+                                                    * Radiant Plate
+                                                        X
+                                                    * (Armor)
+                                                        X
+                                                Skuller Coat
+                                                    * Skuller Coat
+                                                        X
+                                                    * (Weapon)
+                                                        X
+                                            * (Animal Product)
+                                                Scythe Axe
+                                                    * Scythe Axe
+                                                        X
+                                                    * (Metal)
+                                                        Genesis Hammer
+                                                            * Genesis Hammer
+                                                                X
+                                                            * (Magic Tool)
+                                                                L
+                                                        Reaper's Scythe
+                                                            * Reaper's Scythe
+                                                                Scyte Axe
+                                                                    L
+                                                            * (Ore)
+                                                                Giant Beetle
+                                                                    L
+                                                                Ice Caltrop
+                                                                    L
+                                                                Plajig
+                                                                    L
+                                                                ...
+                                                            * (General Goods)
+                                                                Healing Ball
+                                                                    * Healing Ball
+                                                                        X
+                                                                    * (Medicine)
+                                                                        L
+                                                                Knapsack
+                                                                    L
+                                                                Exploration Set
+                                                                    L
+                                                                ...
+                                                            * (Gathering)
+                                                                X
+                                                        Woodcutter's Axe
+                                                            * Woodcutter's Axe
+                                                                Scythe Axe
+                                                                    L
+                                                            * (Lumber)
+                                                                Healing Ball
+                                                                    L
+                                                                Energianica
+                                                                    * Energianica
+                                                                        X
+                                                                    * (Magic Tool)
+                                                                        L
+                                                                Reaper's Scythe
+                                                                    L
+                                                            * (Gas)
+                                                                L
+                                                            * (Gathering)
+                                                                X
+                                                        ...
+                                                        Elixir Ring
+                                                            <<FINISHED>>
+                                                    * (Gathering)
+                                                        X
+                                                Cloth
+                                                    L
+                                                Natural Cloth
+                                                    * Natural Cloth
+                                                        Puni Leather
+                                                            * Puni Leather
+                                                                Frost Armor
+                                                                    * Frost Armor
+                                                                        X
+                                                                    * (Armor)
+                                                                        X
+                                                                Charade Lumont
+                                                                    * Charade Lumont
+                                                                        X
+                                                                    * (Armor)
+                                                                        X
+                                                                Fairy Cloak
+                                                                    * Fairy Cloak
+                                                                        X
+                                                                    * (Armor)
+                                                                        X
+                                                            * (Puniball)
+                                                                Puni Jelly
+                                                                    * Puni Jelly
+                                                                        X
+                                                                    * (Food B)
+                                                                        X
+                                                                Nectar
+                                                                    * Nectar
+                                                                        X
+                                                                    * (Medicine)
+                                                                        L
+                                                                Goddess Cup
+                                                                    L
+                                                                ...
+                                                            * (Animal Product)
+                                                                L
+                                                        Chain Vest
+                                                            * Chain Vest
+                                                                X
+                                                            * (Armor)
+                                                                X
+                                                        Border Scale
+                                                            * Border Scale
+                                                                X
+                                                            * (Armor)
+                                                                X
+                                                    * (Plant)
+                                                        Grass Beans
+                                                            * Grass Beans
+                                                                x
+                                                            * (Medicine)
+                                                                X
+                                                        Green Supplement
+                                                            * Green Supplement
+                                                                X
+                                                            * (Stone)
+                                                                Eternal Fear
+                                                                    * Eternal Fear
+                                                                        X
+                                                                    * (Magic Tool)
+                                                                        X
+                                                                Stone Seed
+                                                                    * Stone Seed
+                                                                        x
+                                                                    * (Seed)
+                                                                        X
+                                                                Stone Material
+                                                                    * Stone Material
+                                                                        Marblestone
+                                                                            * Marblestone
+                                                                                Genesis Hammer
+                                                                                    L
+                                                                                Meltstone
+                                                                                    * Meltstone
+                                                                                        Eternal Fear
+                                                                                            L
+                                                                                        Grudge Globe
+                                                                                            L
+                                                                                    * (Stone)
+                                                                                        L
+                                                                                    * (Fuel)
+                                                                                        Explosive Uni
+                                                                                            * Explosive Uni
+                                                                                                X
+                                                                                            * (Bomb)
+                                                                                                X
+                                                                                        Craft
+                                                                                            * Craft
+                                                                                                X
+                                                                                            * (Bomb)
+                                                                                                X
+                                                                                        Bomb
+                                                                                            * Bomb
+                                                                                                Rose Bomb
+                                                                                                    * Rose Bomb
+                                                                                                        Fire Bottle
+                                                                                                            * Fire Bottle
+                                                                                                                X
+                                                                                                            * (Magic Tool)
+                                                                                                                L
+                                                                                                    * (Bomb)
+                                                                                                        X
+                                                                                                Bomb Rod
+                                                                                                    * Bomb Rod
+                                                                                                        Bomb Hammer
+                                                                                                            * Bomb Hammer
+                                                                                                                X
+                                                                                                            * (Gunpowder)
+                                                                                                                Explosive Uni
+                                                                                                                    L
+                                                                                                                Craft
+                                                                                                                    L
+                                                                                                                Bomb
+                                                                                                                    L
+                                                                                                                ...
+                                                                                                            * (Gathering)
+                                                                                                                X
+                                                                                                    * (Gemstone)
+                                                                                                        Lightning Bell
+                                                                                                            L
+                                                                                                        Vanish Siegel
+                                                                                                            L
+                                                                                                        Pearl Crystal
+                                                                                                            * Pearl Crystal
+                                                                                                                Virgin Snow
+                                                                                                                    * Virgin Snow
+                                                                                                                        X
+                                                                                                                    * (Weapon)
+                                                                                                                        X
+                                                                                                            * (Medicinal)
+                                                                                                                Grass Beans
+                                                                                                                    L
+                                                                                                                Dry Biscuit
+                                                                                                                    * Dry Biscuit
+                                                                                                                        X
+                                                                                                                    * (Food B)
+                                                                                                                        X
+                                                                                                                Blessing Ointment
+                                                                                                                    * Blessing Ointment
+                                                                                                                        X
+                                                                                                                    * (Medicine)
+                                                                                                                        X
+                                                                                                                ...
+                                                                                                            * (Food)
+                                                                                                                Cokctail Leb
+                                                                                                                    * Cocktail Leb
+                                                                                                                        X
+                                                                                                                    * (Food B)
+                                                                                                                        X
+                                                                                                                Ashra Donut
+                                                                                                                    * Ashra Donut
+                                                                                                                        X
+                                                                                                                    * (Food B)
+                                                                                                                        X
+                                                                                                                Rasen Pudding
+                                                                                                                    * Rasen Pudding
+                                                                                                                        Cocktail Leb
+                                                                                                                            L
+                                                                                                                    * (Food B)
+                                                                                                                        X
+                                                                                                                ...
+                                                                                                            * (Jewel)
+                                                                                                                Lunar Lamp
+                                                                                                                    * Lunar Lamp
+                                                                                                                        X
+                                                                                                                    * (Magic Tool)
+                                                                                                                        L
+                                                                                                                Bomb Rod
+                                                                                                                    L
+                                                                                                                Loupe Compass
+                                                                                                                    * Loupe Compass
+                                                                                                                        X
+                                                                                                                    * (Gathering)
+                                                                                                                        X
+                                                                                                                ...
+                                                                                                        ...
+                                                                                                    * (Mystery)
+                                                                                                        Norden Brand
+                                                                                                            * Norden Brand
+                                                                                                                X
+                                                                                                            * (Magic Tool)
+                                                                                                                L
+                                                                                                        Lunar Lamp
+                                                                                                            L
+                                                                                                        Philosopher's Book
+                                                                                                            * Philosopher's Book
+                                                                                                                X
+                                                                                                            * (Magic Tool)
+                                                                                                                L
+                                                                                                        ...
+                                                                                                    * (Gathering)
+                                                                                                        X
+                                                                                                Tar Bomb
+                                                                                                    * Tar Bomb
+                                                                                                        Scarlet Tera Bomb
+                                                                                                            * Scarlet Tera Bomb
+                                                                                                                X
+                                                                                                            * (Bomb)
+                                                                                                                X
+                                                                                                    * (Bomb)
+                                                                                                        X
+                                                                                            * (Bomb)
+                                                                                                X
+                                                                                        ...
+                                                                            * (Stone)
+                                                                                L
+                                                                            * (Mystery)
+                                                                                L
+                                                                    * (Stone)
+                                                                        L
+                                                                ...
+                                                            * (Lumber)
+                                                                L
+                                                            * (Supplement)
+                                                                Ice Caltrop
+                                                                    L
+                                                                Craft
+                                                                    L
+                                                                Bomb
+                                                                    L
+                                                                ...
+                                                        Zettel
+                                                            * Zettel
+                                                                Traveler's Water Orb
+                                                                    * Traveler's Water Orb
+                                                                        Healing Ball
+                                                                            L
+                                                                        Delphi Rose Incense
+                                                                            * Delphi Rose Incense
+                                                                                Mystic Robe
+                                                                                    * Mystic Robe
+                                                                                        X
+                                                                                    * (Magic Tool)
+                                                                                        L
+                                                                                Glass Flower
+                                                                                    * Glass Flower
+                                                                                        Kleid Ice Bomb
+                                                                                            * Kleid Ice Bomb
+                                                                                                X
+                                                                                            * (Bomb)
+                                                                                                X
+                                                                                        Mirage Loupe
+                                                                                            * Mirage Loupe
+                                                                                                Loupe Compass
+                                                                                                    L
+                                                                                            * (Gathering)
+                                                                                                X
+                                                                                        Concert Mistress
+                                                                                            * Concert Mistress
+                                                                                                X
+                                                                                            * (Weapon)
+                                                                                                X
+                                                                                    * (Plant)
+                                                                                        L
+                                                                                    * (Mystery)
+                                                                                        L
+                                                                                    * (Jewel)
+                                                                                        L
+                                                                            * (Flower)
+                                                                                Grass Beans
+                                                                                    L
+                                                                                Blessing Ointment
+                                                                                    L
+                                                                                Thorny Embrace
+                                                                                    * Thorny Embrace
+                                                                                        X
+                                                                                    * (Magic Tool)
+                                                                                        L
+                                                                                ...
+                                                                            * (Medicinal)
+                                                                                L
+                                                                            * (Gas)
+                                                                                L
+                                                                            * (General Goods)
+                                                                                L
+                                                                        Super Pure Water
+                                                                            * Super Pure Water
+                                                                                Goddess Cup
+                                                                                    L
+                                                                            * (Water)
+                                                                                Ice Caltrop
+                                                                                    L
+                                                                                Ice Bomb
+                                                                                    * Ice Bomb
+                                                                                        Norden Brand
+                                                                                            L
+                                                                                        Kleid Ice Bomb
+                                                                                            L
+                                                                                        Frost Armor
+                                                                                            L
+                                                                                    * (Bomb)
+                                                                                        X
+                                                                                Norden Brand
+                                                                                    L
+                                                                                ...
+                                                                            * (Medicinal)
+                                                                                L
+                                                                        Mist Liquid
+                                                                            L
+                                                                    * (Water)
+                                                                        L
+                                                                    * (Mystery)
+                                                                        L
+                                                            * (Fuel)
+                                                                L
+                                                            * (General Goods)
+                                                                L
+                                                        ...
+                                                    * (Cloth)
+                                                        L
+                                                ...
+                                            * (Cloth)
+                                                L
+                                        Eldrocode
+                                            * Eldrocode
+                                                Stark Cologne
+                                                    * Stark Cologne
+                                                        X
+                                                    * (Armor)
+                                                        X
+                                            * (Jewel)
+                                                L
+                                            * (Cloth)
+                                                L
+                                        ...
+                                    * (Supplement)
+                                        L
+                                ...
+                            * (Metal)
+                                L
+                    * (Magic Tool)
+                        L
+                Bubble Bullet
+                    * Bubble Bullet
+                        X
+                    * (Bomb)
+                        X
+                ...
+            * (Animal Product)
+                L
+    * (Gas)
+        L
+    * (General Goods)
+        L

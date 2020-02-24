@@ -79,8 +79,8 @@ class AdminItemController extends Controller
     public function edit(Item $item)
     {
         //
-        $categories = Category::all()->pluck('name', 'id');
-        $materials = Material::all()->sortBy('materialable_type');
+        $categories = Category::pluck('name', 'id');
+        $materials = Material::orderBy('materialable_type', 'asc')->get();
 
         $material_temps = [];
 
