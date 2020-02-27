@@ -1,8 +1,20 @@
 @extends('layouts.simple')
 
 @section('content')
+    @include('includes.simple-navbar', [
+        'items' => [
+            ['name' => 'Item List', 'link' => route('items.index'), 'active' => true],
+            ['name' => 'Trait Transfer', 'link' => route('transfer.index'), 'active' => false],
+        ]
+    ])
+
     <div class="container">
         <h1>{{ $title }}</h1>
+
+        <h4>
+            All items (gather items, sythesis items, battle items, equipments) in Atelier Ryza.
+            You can filter by a category or a material.
+        </h4>
 
         {!! Form::open(['url' => '#', 'method' => 'get', 'class' => 'form-inline']) !!}
 

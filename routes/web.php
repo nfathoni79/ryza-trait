@@ -28,3 +28,6 @@ Route::get('/items', 'ItemController@index')->name('items.index');
 Route::get('/items/{item}', 'ItemController@show')->name('items.show');
 Route::get('/items/category/{category}', 'ItemController@indexCategory')->name('items.index.category');
 Route::get('/items/material/{material}', 'ItemController@indexMaterial')->name('items.index.material');
+
+Route::get('/transfer', 'TransferController@index')->name('transfer.index');
+Route::post('/transfer/search', 'TransferController@search')->name('transfer.search');

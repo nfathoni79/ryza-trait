@@ -18,7 +18,7 @@ class ItemController extends Controller
     public function index()
     {
         //
-        $title = 'Items';
+        $title = 'Item List';
         $items = Item::all();
         $categories = Category::pluck('name', 'id');
         $materials = Material::orderBy('materialable_type', 'asc')->get();

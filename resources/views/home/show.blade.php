@@ -1,6 +1,13 @@
 @extends('layouts.simple')
 
 @section('content')
+    @include('includes.simple-navbar', [
+        'items' => [
+            ['name' => 'Item List', 'link' => route('items.index'), 'active' => true],
+            ['name' => 'Trait Transfer', 'link' => route('transfer.index'), 'active' => false],
+        ]
+    ])
+
     <div class="container">
         <h1>{{ $title }}</h1>
 
