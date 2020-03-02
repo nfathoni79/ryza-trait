@@ -16,7 +16,7 @@ class TransferController extends Controller
     public function index(Item $startItem = null, Item $finalItem = null)
     {
         //
-        $title = 'Atelier Ryza Trait Transfer Route Finder';
+        $title = 'Ryza Trait Transfer';
 
         $navbarItems = [
             ['name' => 'Trait Transfer', 'link' => route('transfer.index'), 'active' => true],

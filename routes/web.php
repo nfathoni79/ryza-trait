@@ -31,3 +31,7 @@ Route::get('/items/filter/{categoryId?}/{materialId?}', 'ItemController@filter')
 
 Route::get('/transfer/{startItem?}/{finalItem?}', 'TransferController@index')->name('transfer.index');
 Route::post('/transfer', 'TransferController@find')->name('transfer.find');
+
+Route::get('/test', function () {
+    return view('test');
+});
