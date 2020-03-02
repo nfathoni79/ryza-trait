@@ -6,7 +6,6 @@
 
         @include('includes.breadcrumb', [
             'data' => [
-                ['name' => 'Dashboard', 'link' => '#'],
                 ['name' => 'Items', 'link' => route('admin.items.index')],
                 ['name' => 'Create Item'],
             ]

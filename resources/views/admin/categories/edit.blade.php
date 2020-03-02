@@ -6,7 +6,6 @@
 
         @include('includes.breadcrumb', [
             'data' => [
-                ['name' => 'Dashboard', 'link' => '#'],
                 ['name' => 'Categories', 'link' => route('admin.categories.index')],
                 ['name' => 'Edit Category'],
             ]

@@ -6,7 +6,6 @@
 
         @include('includes.breadcrumb', [
             'data' => [
-                ['name' => 'Dashboard', 'link' => '#'],
                 ['name' => 'Items', 'link' => route('admin.items.index')],
                 ['name' => 'Edit Item'],
             ]
@@ -34,7 +33,7 @@
             {!! Form::select('materials[]', $materials, null, [
                 'class' => 'form-control selectpicker',
                 'multiple' => true,
-                'data-live-search' => 'true']) 
+                'data-live-search' => 'true'])
             !!}
         </div>
 

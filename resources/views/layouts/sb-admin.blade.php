@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Ryza Item</title>
+    <title>{{ config('app.name') }} Admin</title>
     <link rel="stylesheet" href="{!! asset('css/app.css') !!}">
     <link rel="stylesheet" href="{!! asset('css/sb-admin.css') !!}">
 
@@ -17,7 +17,7 @@
 
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.html">Ryza Item</a>
+        <a class="navbar-brand" href="index.html">{{ config('app.name') }} Admin</a>
         <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
 
         <!-- Navbar Search-->
