@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <title>{{ $title }}</title>
 
-    <link rel="icon" href="{!! asset('puni-jelly.png') !!}">
-    <link rel="stylesheet" href="{!! asset('css/app.css') !!}">
-    <script src="{!! asset('js/app.js') !!}" charset="utf-8"></script>
+    <link rel="icon" href="{!! secure_asset('puni-jelly.png') !!}">
+    <link rel="stylesheet" href="{!! secure_asset('css/app.css') !!}">
+    <script src="{!! secure_asset('js/app.js') !!}" charset="utf-8"></script>
 
     <style>
         body {
             padding-top: 70px;
-            background: url("{!! asset('ryza-wallpaper.jpg') !!}") no-repeat center center fixed;
+            background: url("{!! secure_asset('ryza-wallpaper.jpg') !!}") no-repeat center center fixed;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             background-size: cover;
