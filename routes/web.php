@@ -11,11 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Auth::routes();
+Route::get('/', 'TransferController@index');
+
+Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -25,9 +27,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/items', 'ItemController@index')->name('items.index');
-Route::get('/items/{item}', 'ItemController@show')->name('items.show');
-Route::get('/items/category/{category}', 'ItemController@indexCategory')->name('items.index.category');
-Route::get('/items/material/{material}', 'ItemController@indexMaterial')->name('items.index.material');
+Route::get('/items/filter/{categoryId?}/{materialId?}', 'ItemController@filter')->name('items.filter');
 
-Route::get('/transfer', 'TransferController@index')->name('transfer.index');
-Route::post('/transfer/search', 'TransferController@search')->name('transfer.search');
+Route::get('/transfer/{startItem?}/{finalItem?}', 'TransferController@index')->name('transfer.index');
+Route::post('/transfer', 'TransferController@find')->name('transfer.find');

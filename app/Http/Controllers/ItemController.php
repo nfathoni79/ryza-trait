@@ -19,65 +19,73 @@ class ItemController extends Controller
     {
         //
         $title = 'Item List';
+
+        $navbarItems = [
+            ['name' => 'Trait Transfer', 'link' => route('transfer.index'), 'active' => false],
+            ['name' => 'Item List', 'link' => route('items.index'), 'active' => true]
+        ];
+
         $items = Item::all();
-        $categories = Category::pluck('name', 'id');
-        $materials = Material::orderBy('materialable_type', 'asc')->get();
+        // NOT WORKING IN DROPDOWN WITHOUT ALL()
+        $categories = Category::pluck('name', 'id')->all();
+        $materials = Material::orderBy('materialable_type', 'asc')->get()->pluck('materialable.name', 'id')->all();
 
-        $material_temps = [];
-
-        foreach ($materials as $material) {
-            $material_temps[$material->id] = $material->materialable->name;
-        }
-
-        $materials = $material_temps;
-
-        return view('home.index', compact('title', 'items', 'categories', 'materials'));
+        return view('home.items.index', compact('title', 'navbarItems', 'items', 'categories', 'materials'));
     }
 
-    public function indexCategory(Category $category)
+    public function filter($categoryId = 0, $materialId = 0)
     {
-        //
-        $title = 'Items of category "'. $category->name . '"';
+        $title = 'Item List';
 
-        $items = Item::whereHas('categories', function (Builder $query) use ($category) {
-            $query->where('categories.id', $category->id);
-        })->get();
+        $navbarItems = [
+            ['name' => 'Trait Transfer', 'link' => route('transfer.index'), 'active' => false],
+            ['name' => 'Item List', 'link' => route('items.index'), 'active' => true]
+        ];
 
-        $categories = Category::pluck('name', 'id');
-        $materials = Material::orderBy('materialable_type', 'asc')->get();
+        if ($categoryId && $materialId)
+        {
+            $category = Category::findOrFail($categoryId);
+            $material = Material::findOrFail($materialId);
 
-        $material_temps = [];
+            $controlTitle = 'Items with category "' . $category->name . '" and material "' . $material->materialable->name . '""';
 
-        foreach ($materials as $material) {
-            $material_temps[$material->id] = $material->materialable->name;
+            $items = Item::whereHas('categories', function (Builder $query) use ($category) {
+                $query->where('categories.id', $category->id);
+            });
+
+            $items = $items->whereHas('materials', function (Builder $query) use ($material) {
+                $query->where('materials.id', $material->id);
+            })->get();
+        }
+        else if ($categoryId)
+        {
+            $category = Category::findOrFail($categoryId);
+            $controlTitle = 'Items with category "'. $category->name . '"';
+
+            $items = Item::whereHas('categories', function (Builder $query) use ($category) {
+                $query->where('categories.id', $category->id);
+            })->get();
+        }
+        else if ($materialId)
+        {
+            $material = Material::findOrFail($materialId);
+            $controlTitle = 'Items with material "'. $material->materialable->name . '"';
+
+            $items = Item::whereHas('materials', function (Builder $query) use ($material) {
+                $query->where('materials.id', $material->id);
+            })->get();
+        }
+        else
+        {
+            $controlTitle = 'All Items';
+            $items = Item::all();
         }
 
-        $materials = $material_temps;
+        // NOT WORKING IN DROPDOWN WITHOUT ALL()
+        $categories = Category::pluck('name', 'id')->all();
+        $materials = Material::orderBy('materialable_type', 'asc')->get()->pluck('materialable.name', 'id')->all();
 
-        return view('home.index', compact('title', 'items', 'categories', 'materials'));
-    }
-
-    public function indexMaterial(Material $material)
-    {
-        //
-        $title = 'Items of material "'. $material->materialable->name . '"';
-
-        $items = Item::whereHas('materials', function (Builder $query) use ($material) {
-            $query->where('materials.id', $material->id);
-        })->get();
-
-        $categories = Category::pluck('name', 'id');
-        $materials = Material::orderBy('materialable_type', 'asc')->get();
-
-        $material_temps = [];
-
-        foreach ($materials as $material) {
-            $material_temps[$material->id] = $material->materialable->name;
-        }
-
-        $materials = $material_temps;
-
-        return view('home.index', compact('title', 'items', 'categories', 'materials'));
+        return view('home.items.index', compact('title', 'navbarItems', 'controlTitle', 'items', 'categories', 'materials'));
     }
 
     /**
@@ -110,9 +118,9 @@ class ItemController extends Controller
     public function show(Item $item)
     {
         //
-        $title = $item->name;
+        $item = Item::with('categories', 'materials.materialable')->get()->find($item);
 
-        return view('home.show', compact('title', 'item'));
+        return $item;
     }
 
     /**

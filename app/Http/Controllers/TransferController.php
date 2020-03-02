@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Item;
-use App\Searcher;
+use App\Finder;
 
 class TransferController extends Controller
 {
@@ -13,31 +13,44 @@ class TransferController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Item $startItem = null, Item $finalItem = null)
     {
         //
-        $title = 'Trait Transfer';
-        $items = Item::pluck('name', 'id');
+        $title = 'Atelier Ryza Trait Transfer Route Finder';
 
-        return view('home.transfer.index', compact('title', 'items'));
+        $navbarItems = [
+            ['name' => 'Trait Transfer', 'link' => route('transfer.index'), 'active' => true],
+            ['name' => 'Item List', 'link' => route('items.index'), 'active' => false]
+        ];
+
+        $items = Item::pluck('name', 'id');
+        $itemsWithMaterial = Item::has('materials')->get()->pluck('name', 'id');
+        $transferRoutes = null;
+
+        if ($startItem && $finalItem)
+        {
+            $finder = new Finder();
+            $finder->findRoutes($startItem, $finalItem);
+            $transferRoutes = $finder->transferRoutes;
+        }
+
+        return view('home.transfer.index', compact(
+            'title', 'navbarItems', 'items', 'itemsWithMaterial', 'transferRoutes', 'startItem', 'finalItem'
+        ));
     }
 
-    public function search(Request $request)
+    public function find(Request $request)
     {
         //
-        set_time_limit(8000000);
-
         $request->validate([
-            'fromItem' => 'required',
-            'toItem' => 'required',
+            'startItem' => 'required',
+            'finalItem' => 'required',
         ]);
 
-        $fromItem = Item::findOrFail($request->fromItem);
-        $toItem = Item::findOrFail($request->toItem);
+        $startItem = Item::findOrFail($request->startItem);
+        $finalItem = Item::findOrFail($request->finalItem);
 
-        $fullRoutes = Searcher::searchRoutes($fromItem, $toItem);
-
-        return redirect()->route('transfer.index')->with('fullRoutes' , $fullRoutes);
+        return redirect()->route('transfer.index', [$startItem, $finalItem]);
     }
 
     /**
