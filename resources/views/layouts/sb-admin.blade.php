@@ -7,12 +7,12 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>{{ config('app.name') }} Admin</title>
-    <link rel="stylesheet" href="{!! secure_asset('css/app.css') !!}">
-    <link rel="stylesheet" href="{!! secure_asset('css/sb-admin.css') !!}">
+    <link rel="stylesheet" href="{!! asset('css/app.css') !!}">
+    <link rel="stylesheet" href="{!! asset('css/sb-admin.css') !!}">
 
     @yield('styles')
 
-    <script src="{!! secure_asset('js/app.js') !!}" charset="utf-8"></script>
+    <script src="{!! asset('js/app.js') !!}" charset="utf-8"></script>
 </head>
 
 <body class="sb-nav-fixed">
@@ -82,7 +82,7 @@
         </div>
     </div>
 
-    <script src="{!! secure_asset('js/sb-admin.js') !!}"></script>
+    <script src="{!! asset('js/sb-admin.js') !!}"></script>
 
     @yield('scripts')
 </body>
