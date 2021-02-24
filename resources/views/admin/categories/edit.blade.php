@@ -15,6 +15,11 @@
 
         {!! Form::model($category, ['route' => ['admin.categories.update', $category], 'method' => 'put']) !!}
         <div class="form-group">
+            {!! Form::label('number', 'Number:') !!}
+            {!! Form::text('number', null, ['class' => 'form-control']) !!}
+        </div>
+
+        <div class="form-group">
             {!! Form::label('name', 'Name:') !!}
             {!! Form::text('name', null, ['class' => 'form-control']) !!}
         </div>

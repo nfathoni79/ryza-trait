@@ -25,7 +25,9 @@ class ItemController extends Controller
             ['name' => 'Item List', 'link' => route('items.index'), 'active' => true]
         ];
 
-        $items = Item::all();
+        // $items = Item::all();
+        $items = Item::orderBy('number', 'asc')->get();
+
         // NOT WORKING IN DROPDOWN WITHOUT ALL()
         $categories = Category::pluck('name', 'id')->all();
         $materials = Material::orderBy('materialable_type', 'asc')->get()->pluck('materialable.name', 'id')->all();
@@ -55,7 +57,9 @@ class ItemController extends Controller
 
             $items = $items->whereHas('materials', function (Builder $query) use ($material) {
                 $query->where('materials.id', $material->id);
-            })->get();
+            });
+
+            $items = $items->orderBy('number', 'asc')->get();
         }
         else if ($categoryId)
         {
@@ -64,7 +68,7 @@ class ItemController extends Controller
 
             $items = Item::whereHas('categories', function (Builder $query) use ($category) {
                 $query->where('categories.id', $category->id);
-            })->get();
+            })->orderBy('number', 'asc')->get();
         }
         else if ($materialId)
         {
@@ -73,12 +77,12 @@ class ItemController extends Controller
 
             $items = Item::whereHas('materials', function (Builder $query) use ($material) {
                 $query->where('materials.id', $material->id);
-            })->get();
+            })->orderBy('number', 'asc')->get();
         }
         else
         {
             $controlTitle = 'All Items';
-            $items = Item::all();
+            $items = Item::orderBy('number', 'asc')->get();
         }
 
         // NOT WORKING IN DROPDOWN WITHOUT ALL()

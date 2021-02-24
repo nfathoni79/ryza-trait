@@ -5,6 +5,7 @@
     right: 25px;
     display: none;
     background-color: #fd7e14;
+    z-index: 9999;
 }
 </style>
 

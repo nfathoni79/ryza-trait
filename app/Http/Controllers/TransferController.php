@@ -16,6 +16,8 @@ class TransferController extends Controller
     public function index(Item $startItem = null, Item $finalItem = null)
     {
         //
+        set_time_limit(3000);
+
         $title = 'Ryza Trait Transfer';
 
         $navbarItems = [
@@ -27,11 +29,16 @@ class TransferController extends Controller
         $itemsWithMaterial = Item::has('materials')->get()->pluck('name', 'id');
         $transferRoutes = null;
 
-        if ($startItem && $finalItem)
-        {
+        if ($startItem && $finalItem) {
+            $display = false;
+
             $finder = new Finder();
-            $finder->findRoutes($startItem, $finalItem);
+            $finder->findRoutes($startItem, $finalItem, $display);
             $transferRoutes = $finder->transferRoutes;
+
+            if ($display) {
+                return '<pre>' . $finder->display . '</pre>';
+            }
         }
 
         return view('home.transfer.index', compact(

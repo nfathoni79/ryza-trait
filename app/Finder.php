@@ -18,10 +18,11 @@ class Finder
     private $singleRouteMaterialIds = [];
 
     public $transferRoutes = [];
+    public $display = '';
 
-    public function findRoutes(Item $startItem, Item $finishItem)
+    public function findRoutes(Item $startItem, Item $finishItem, $display = false)
     {
-        $this->find($startItem, $finishItem);
+        $this->find($startItem, $finishItem, $display);
     }
 
     private function find(Item $startItem, Item $finishItem, $display = false)
@@ -29,7 +30,7 @@ class Finder
         if ($display)
         {
             // DISPLAY THE ITEM
-            echo $this->tab($this->$depth) . $startItem->name . "\n";
+            $this->display .= $this->tab($this->depth) . $startItem->name . "\n";
             // END DISPLAY THE ITEM
         }
 
@@ -39,7 +40,7 @@ class Finder
             {
                 // MARK THE FINAL ITEM
                 $this->depth++;
-                echo $this->tab($this->depth) . "VV\n";
+                $this->display .= $this->tab($this->depth) . "VV\n";
                 $this->depth--;
                 // END MARK THE FINAL ITEM
             }
@@ -60,10 +61,10 @@ class Finder
             {
                 // DISPLAY THE TRUE ROUTE
                 for ($i=0; $i < count($this->singleRouteMaterialIds); $i++) {
-                    echo Item::find($this->singleRouteItemIds[$i])->name . " -> *" . Material::find($this->singleRouteMaterialIds[$i])->materialable->name . " -> ";
+                    $this->display .= Item::find($this->singleRouteItemIds[$i])->name . " -> *" . Material::find($this->singleRouteMaterialIds[$i])->materialable->name . " -> ";
                 }
 
-                echo Item::find($this->singleRouteItemIds[count($this->singleRouteItemIds) - 1])->name . "\n";
+                $this->display .= Item::find($this->singleRouteItemIds[count($this->singleRouteItemIds) - 1])->name . "\n";
                 // END DISPLAY THE TRUE ROUTE
             }
 
@@ -92,7 +93,7 @@ class Finder
                 {
                     // MARK THE ITEM EXIST IN FOUNDS
                     $this->depth++;
-                    echo $this->tab($this->depth) . "L\n";
+                    $this->display .= $this->tab($this->depth) . "L\n";
                     $this->depth--;
                     // END MARK THE ITEM EXIST IN FOUNDS
                 }
@@ -135,7 +136,7 @@ class Finder
             if ($display)
             {
                 // DISPLAY THE MATERIAL SLOTS
-                echo $this->tab($this->depth) . '*' . $slot->materialable->name . "\n";
+                $this->display .= $this->tab($this->depth) . '*' . $slot->materialable->name . "\n";
                 // END DISPLAY THE MATERIAL SLOTS
             }
 
@@ -149,7 +150,7 @@ class Finder
                     {
                         // MARK THE MATERIAL EXIST IN FOUNDSS
                         $this->depth++;
-                        echo $this->tab($this->depth) . "L\n";
+                        $this->display .= $this->tab($this->depth) . "L\n";
                         $this->depth--;
                         // END MARK THE MATERIAL EXIST IN FOUNDS
                     }
@@ -183,7 +184,7 @@ class Finder
                 {
                     // MARK THE UN-ENTERABLE
                     $this->depth++;
-                    echo $this->tab($this->depth) . "X\n";
+                    $this->display .= $this->tab($this->depth) . "X\n";
                     $this->depth--;
                     // END MARK THE UN-ENTERABLE
                 }
@@ -198,7 +199,7 @@ class Finder
             foreach ($enterableItems as $enterableItem)
             {
                 $this->depth++;
-                $findResult = $this->find($enterableItem, $finishItem);
+                $findResult = $this->find($enterableItem, $finishItem, $display);
 
                 if (!$findResult)
                 {

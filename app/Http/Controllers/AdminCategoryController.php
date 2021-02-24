@@ -42,10 +42,12 @@ class AdminCategoryController extends Controller
     {
         //
         $request->validate([
+            'number' => 'required|numeric|min:0',
             'name' => 'required',
         ]);
 
         $category = new Category();
+        $category->number = $request->number;
         $category->name = $request->name;
         $category->save();
 
@@ -92,9 +94,11 @@ class AdminCategoryController extends Controller
     {
         //
         $request->validate([
+            'number' => 'required|numeric|min:0',
             'name' => 'required',
         ]);
 
+        $category->number = $request->number;
         $category->name = $request->name;
         $category->save();
 

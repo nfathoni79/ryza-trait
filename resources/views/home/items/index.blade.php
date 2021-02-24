@@ -21,7 +21,7 @@
 @endsection
 
 @section('content')
-    <div class="container">
+    <div class="container mt-4">
         <div class="jumbotron">
             <h1 class="display-4">Item List</h1>
             <p class="lead">
@@ -80,7 +80,7 @@
                                 <tbody>
                                     @foreach ($items as $item)
                                         <tr>
-                                            <th scope="row">{{ $item->id }}</th>
+                                            <th scope="row">{{ $item->number }}</th>
                                             <td>
                                                 <a href="#" class="item-link" data-toggle="modal" data-target="#itemModal" data-id="{{ $item->id }}">
                                                     {{ $item->name }}

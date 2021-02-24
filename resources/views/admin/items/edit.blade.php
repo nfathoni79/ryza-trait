@@ -15,6 +15,11 @@
 
         {!! Form::model($item, ['route' => ['admin.items.update', $item], 'method' => 'put']) !!}
         <div class="form-group">
+            {!! Form::label('number', 'Number:') !!}
+            {!! Form::number('number', null, ['class' => 'form-control']) !!}
+        </div>
+
+        <div class="form-group">
             {!! Form::label('name', 'Name:') !!}
             {!! Form::text('name', null, ['class' => 'form-control']) !!}
         </div>

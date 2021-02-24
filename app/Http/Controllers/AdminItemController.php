@@ -43,10 +43,12 @@ class AdminItemController extends Controller
     {
         //
         $request->validate([
+            'number' => 'required|numeric|min:0',
             'name' => 'required',
         ]);
 
         $item = new Item();
+        $item->number = $request->number;
         $item->name = $request->name;
         $item->save();
 
@@ -104,9 +106,11 @@ class AdminItemController extends Controller
     {
         //
         $request->validate([
+            'number' => 'required|numeric|min:0',
             'name' => 'required',
         ]);
 
+        $item->number = $request->number;
         $item->name = $request->name;
         $item->save();
 
